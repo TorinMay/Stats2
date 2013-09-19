@@ -28,12 +28,17 @@ public class Stats {
 		return min;
 	}
 
-	public static int mean(int[] a) {
-		int mean = 0;
+	public static double mean(int[] a) {
+		double sum = 0.0;
 
 		for (int i=0; i < a.length; i++) {
-			int mean = i + a[i];
+			sum += a[i];
 		}
+		return (sum / a.length);
 	}
-	return mean;
+
+	public static int median(int [] a) {
+		
+	}
+	
 }
