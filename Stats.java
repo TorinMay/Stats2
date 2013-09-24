@@ -4,17 +4,17 @@ import java.util.Arrays;
 public class Stats {
 	
 	public static void main(String[] args) {
-		int[] a ={1,2,3,4,5,6};
-		int[] b ={1,2,3,4,5,6,7}; //Only used to test median.
-		int[] c ={1,2,2,4,5}; //Only used to test mode.
-	System.out.println("The max is " + max(a));
-	System.out.println("The min is " + min(a));
-	System.out.println("The mean is " + mean(a));
-	System.out.println("The median is " + median(b));
-	System.out.println("Here is the first quartile " + quartile1(a));
-	System.out.println("Here is the third quartile " + quartile3(a));
-	System.out.println("The mode is " + mode(c));
-	System.out.println("The standard deviation is " + standardDeviation(a));
+		// int[] a ={1,2,3,4,5,6};
+		// int[] b ={1,2,3,4,5,6,7}; //Only used to test median.
+		// int[] c ={1,2,2,4,5}; //Only used to test mode.
+		// System.out.println("The max is " + max(a));
+		// System.out.println("The min is " + min(a));
+		// System.out.println("The mean is " + mean(a));
+		// System.out.println("The median is " + median(b));
+		// System.out.println("Here is the first quartile " + quartile1(a));
+		// System.out.println("Here is the third quartile " + quartile3(a));
+		// System.out.println("The mode is " + mode(c));
+		// System.out.println("The standard deviation is " + standardDeviation(a));
 
 	}
 
