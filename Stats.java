@@ -1,18 +1,19 @@
 import static java.lang.Math.pow;
+import java.util.Arrays;
 
 public class Stats {
 	
 	public static void main(String[] args) {
 		int[] a ={1,2,3,4,5,6};
-		int[] b ={1,2,3,4,5,6,7}; //Only used to test median
-	System.out.println("Here are the numbers:\n 1,2,3,4,5,6");
-	System.out.println("------------------------");
+		int[] b ={1,2,3,4,5,6,7}; //Only used to test median.
+		int[] c ={1,2,2,4,5}; //Only used to test mode.
 	System.out.println("The max is " + max(a));
 	System.out.println("The min is " + min(a));
 	System.out.println("The mean is " + mean(a));
 	System.out.println("The median is " + median(b));
 	System.out.println("Here is the first quartile " + quartile1(a));
-	// System.out.println("The mode is " + mode(a));
+	System.out.println("Here is the third quartile " + quartile3(a));
+	System.out.println("The mode is " + mode(c));
 	System.out.println("The standard deviation is " + standarddeviation(a));
 
 	}
@@ -47,13 +48,14 @@ public class Stats {
 	}
 
 	public static double median(int[] b) {
-		double median = 0.0;
-		for (int i=0; i < b.length; i++) {
-			median = b.length/2;
-		}
-		return median;
-	}
+    Arrays.sort(b);
 
+    if (b.length % 2 == 1) {
+        return (b[(b.length / 2) - 1] + b[b.length / 2]) / 2.0;
+    } else {
+        return b[b.length / 2];
+    }
+}
 	public static double quartile1(int[] a) {
 		double quart1 = 0.0;
 		for (int i=0; i < a.length; i++) {
@@ -70,20 +72,30 @@ public class Stats {
 		return quart3;
 	}
 
-	// public static boolean mode(int[] a) {
-	// 		boolean stat = 0;
-	// 		for (int i=0; i < a.length;	i++) {
-	// 		stat = a[i];
-	// 		}
-	// 		return stat;
-	// }
+	public static int mode(int[] c) {
+    int maxValue = 0;
+    int maxCount = 0;
 
-	public static int standarddeviation(int[] a) {
-		int sd = 0;
+    for (int i = 0; i < c.length; ++i) {
+        int count = 0;
+        for (int j = 0; j < c.length; ++j) {
+            if (c[j] == c[i]) ++count;
+        }
+        if (count > maxCount) {
+            maxCount = count;
+            maxValue = c[i];
+        }
+    }
+
+    return maxValue;
+	}
+
+	public static double standarddeviation(int[] a) {
+		double x = 0;
 		for (int i=0; i < a.length;i++) {
-    		sd = sd + Math.pow(a[i] - a[i]/5, 2);
+    		x = x + Math.pow(a[i] - a[i]/5, 2);
 			}
-		return sd;
+		return x;
 	}
 	
 }
