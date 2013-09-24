@@ -14,7 +14,7 @@ public class Stats {
 	System.out.println("Here is the first quartile " + quartile1(a));
 	System.out.println("Here is the third quartile " + quartile3(a));
 	System.out.println("The mode is " + mode(c));
-	System.out.println("The standard deviation is " + standarddeviation(a));
+	System.out.println("The standard deviation is " + standardDeviation(a));
 
 	}
 
@@ -90,7 +90,7 @@ public class Stats {
     return maxValue;
 	}
 
-	public static double standarddeviation(int[] a) {
+	public static double standardDeviation(int[] a) {
 		double x = 0;
 		for (int i=0; i < a.length;i++) {
     		x = x + Math.pow(a[i] - a[i]/5, 2);
